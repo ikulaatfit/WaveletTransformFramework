@@ -1,0 +1,69 @@
+================================================================================
+=             OpenCL Implementations of Discrete Wavelet Transform             =
+================================================================================
+
+Description
+-----------
+Implementations of separable and non-separable block-based methods for 2-D
+discrete wavelet transform. The wavelet transform
+implementations are written using OpenCL language. 
+
+
+Libraries
+-----
+OpenMP (integrated in Visual Studio)
+OpenCL 1.2
+OpenCV 4.5.3
+SDL 2.0.16
+FFMpeg 4.4 
+
+Console parameters
+-----
+  --show-input /show-input                             Show input video file while converting
+  --show-output /show-output                           Show output video file while converting
+  --help /help -h /h                                   Print this help
+  --input /input -i /i                                 Set path to input image/video fileor camera number
+  --device /device -d /d                               Set device {c,cpu,g,gpu}
+  --print-devices /print-devices                       Print devices info
+  --benchmark-proc /benchmark-proc                     Benchmark process only execution (virtual data)
+  --disable-gen-filter-body /disable-gen-filter-body   Disable generation of filter body
+  --frame-count /frame-count                           Set frame process count
+  --hor-pairs /hor-pairs                               Pixel pairs to process by thread in horizontal transform
+  --vert-pairs /vert-pairs                             pixel pairs to process by thread in vertical transform
+  --hor-x /hor-x                                       Width of group in horizontal transform
+  --hor-y /hor-y                                       Height of group in horizontal transform
+  --vert-x /vert-x                                     Width of group in vertical transform
+  --vert-y /vert-y                                     Height of group in vertical transform
+  --comb-x /comb-x                                     Width of group in combined transform
+  --comb-y /comb-y                                     Height of group in combined transform
+  --hor-kernel /hor-kernel                             Horizontal pass kernel name
+  --vert-kernel /vert-kernel                           Vertical pass kernel name
+  --comb-kernel /comb-kernel                           Combined pass kernel named
+  --output-type /output-type                           Set output type {full,f,csv,c}
+  --comb-corn-proc /comb-corn-proc                     Process horizontal corners in comb out kernels
+  --warp-size /warp-size                               Size of warp
+  --optim-warp /optim-warp                             Optimize algorithm using atomic warp {none,n,local,l,shuffle,s}
+  --optim-thread /optim-thread                         Optimize algorithm using intra thread operations
+  --hor-proc /hor-proc                                 Set type of hor process {blaz_normal,bn,blaz_register,br,laan,l}
+  --vert-proc /vert-proc                               Set type of vert process {blaz_normal,bn,blaz_register,br,laan,l}
+  --engine-type /engine-type                           Set benchmark type {opencl,openmp,openclcomb}
+  --hor-func /hor-func                                 Horizontal pass function name in OpenMP
+  --vert-func /vert-func                               Vertical pass function name in OpenMP
+  --interlaced /interlaced                             Wavelet use output interlaced
+  --max-depth /max-depth                               Maximum depth of transformation
+  --wavelet-type /wavelet-type                         Type of wavelet {CDF53,CDF97,CDF137}
+  --resize-x /resize-x                                 Resolution in x axis to resize
+  --resize-y /resize-y                                 Resolution in y axis to resize
+  --subdevice-size /subdevice-size                     Size of subdevice
+  --image-mem /image-mem                               Type of image memory {texture,global}
+  --disable-double-buffering /disable-double-buffering Disable double buffering
+  --repeat-count /repeat-count                         Wavelet execution repeat count <0,inf) (only for memless-exec)
+  --memless-exec /memless-exec                         Memoryless execution
+  --buffer-type /buffer-type                           Buffer type (CPU|OPENGL)
+  --reader-type /reader-type                           Video reader SDK {OPENCV_FILE,OPENCV_CAMERA}
+  --displayer-type /displayer-type                     Video displayer type {OPENCV,SDL}
+  --width /width                                       Camera width
+  --height /height                                     camera height
+  --screen /screen                                     Screen number
+  --fullscreen /fullscreen                             Fullscreen
+  --output /output -o /o                               Save output to file
